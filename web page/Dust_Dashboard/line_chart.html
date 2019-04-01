@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+<html>
+    <head>
+    </head>
+    
+    
+    <body>
+            <div class="dashboard_graph" style="height: 100%; width: 100%;">
+
+
+              <canvas id="line-chart" width="800" height="450"></canvas>
+    <script>
+        var lineChart = new Chart(document.getElementById("line-chart"), {
+            type: 'line',
+            data: {
+                labels: ['월', '화', '수', '목', '금', '토', '일'],
+                datasets: [{
+                data: [86, 114, 106, 106, 107, 111, 133],
+                label: "PM1.0",
+                borderColor: "#3e95cd",
+                fill: false
+            }, {
+                data: [282, 350, 411, 502, 635, 809, 947],
+                label: "PM2.5",
+                borderColor: "#8e5ea2",
+                fill: false
+            }, {
+                data: [168, 170, 178, 190, 203, 276, 408],
+                label: "PM10",
+                borderColor: "#3cba9f",
+                fill: false
+                    }
+                ]           
+            },
+                options: {
+                title: {
+                display: true,
+                    }
+                }
+            }
+        );
+    </script>
+</div>
+
+    </body>
+</html>
