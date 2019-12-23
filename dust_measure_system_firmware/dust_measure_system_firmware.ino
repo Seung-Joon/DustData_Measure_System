@@ -93,7 +93,7 @@ struct system_data system_data;
 struct dust_data dust_data;
 
 float getV_battery(int pin) {
-  return ((analogRead(pin) * 5.0) / 1024.0) / (7500.0 / ( 30000.0 + 7500.0));
+  return ((analogRead(pin) * 5.0) / 1024.0) / (1000.0 / ( 10000.0 + 1000.0));
 }
 
 float getV_solar(int pin) {
@@ -214,7 +214,7 @@ void lcd_drawMain(struct system_data sys, struct dust_data D_data) {
 
   }
   lcd.setCursor(0, 1);
-  lcd.print("DuV={" + String(D_data.pm1) + "," + String(D_data.pm2_5) + "," + String(D_data.pm10) + "}");
+  lcd.print("DuV={" + String(D_data.pm1) + "," + String(D_data.pm2_5) + "," + String(D_data.pm10) + "}      ");
 }
 
 void DATA_TRANSMITTION(struct system_data sys, struct dust_data D_data) {
